@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* global variables to use */
+:root {
+    --color-container: #ccc;
+    --color-banner: #EB4444;
+    --color-esp32-module: #5DBCD7;
+    --color-esp32-module-before: #073B4A;
+    --radius: 20px;
+    --mobile-width: 80%;
+
+    /* font family */
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: blue;
+}
+
+/* just the background and size of it */
+.container {
+    /* sizes and background */
+    background-color: var(--color-container);
+    width: 100%;
+    height: 100vh;
+    /* for the floats */
+    display: flex;
+    text-align: center;
+}
+
+/* our info */
+.info {
+    text-align: justify;
+    margin: 0 auto;
+    line-height: 20px;
+}
+
+/* this is the cointainer of the data text */
+.data-banner {
+    /* bg color and sizes */
+    background-color: var(--color-banner);
+    min-width: 100px;
+    width: 24%;
+    /* bottom separation and radius */
+    margin: 32px auto 32px auto;
+    border-radius: var(--radius);
+    /* distribute vertically the items */
+    display:flex;
+    flex-flow:column;
+    justify-content:space-around;
+}
+
+/* this is the container of the module info */
+.modules {
+    /* background-color: yellow; */
+    min-width: 100px;
+    width: 60%;
+    margin: 32px auto 32px auto;
+    /* distribute vertically the items */
+    display:flex;
+    flex-flow:column;
+    justify-content:space-around;
+}
+
+.esp32-module {
+    /* background and sizes */
+    background-color: var(--color-esp32-module);
+    width: 100%;
+    /* height sizes */
+    min-height: 100px;
+    height: 30%;
+    /* border: 0.1px solid black; */
+    /* radius */
+    border-radius: var(--radius);
+    /* separation among containers */
+    /* margin-bottom: 30px; */
+}
+.esp32-module::before {
+    content: "MODULOS ESP32";
+    display: block;
+    /* config text */
+    text-align: center;
+    color: #fff ;
+    padding-top: 10px;
+    width: 100%;
+    height: 25px;
+    background-color: var(--color-esp32-module-before);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+/* image in container */
+.container .img-ing{
+    display: block;
+    width: 100%;
+    left: 50px;
+}
+.container .img-ug{
+    display: block;
+    min-width: 100px;
+    width: 10%;
+    /* position: absolute; */
+    margin: 0 auto;
+    /* top: 10%; */
+}
+
+.footer {
+    display: none;
+}
+
+/* create a media query for mobile devices  */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .data-banner {
+        width: var(--mobile-width);
+        height: 100px;
+        margin: 0 auto;
+        /* separation from top and bottom */
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .modules {
+        width: var(--mobile-width);
+        margin: 0 auto;
+        height: 90vh;
+    }
+    .esp32-module {
+        height: 30%;
+    }
+    /* footer */
+    .footer {
+        display: block;
+        /* bg color and sizes */
+        /* background-color: green; */
+        min-width: 100px;
+        width: var(--mobile-width);
+        /* bottom separation and radius */
+        margin: 32px auto 32px auto;
+        border-radius: var(--radius);
+        min-height: 50px;
+    }
+    /* image in footer */
+    .container .img-ing{display: none;}
+    .footer .img-ing{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    .container .img-ug{
+        min-width: 80px;
+        height:100%;
+    }
+    /* for horizontally distribute items */
+    .data-banner {
+        display:flex;
+        flex-flow:row;
+        justify-content:space-around;
+    }
+}
