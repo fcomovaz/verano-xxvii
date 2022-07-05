@@ -13,9 +13,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background-color: blue;
-}
+
 
 /* just the background and size of it */
 .container {
@@ -75,7 +73,9 @@ body {
     /* separation among containers */
     /* margin-bottom: 30px; */
 }
-.esp32-module::before {
+
+/* changing the label */
+.esp32-module > label {
     content: "MODULOS ESP32";
     display: block;
     /* config text */
@@ -87,6 +87,16 @@ body {
     background-color: var(--color-esp32-module-before);
     border-radius: var(--radius) var(--radius) 0 0;
 }
+
+/* hide the check button */
+.esp32-module > input {
+    display: none;
+}
+
+.esp32-module > #esp32:checked {
+    background-color: red;
+}
+
 /* image in container */
 .container .img-ing{
     display: block;
@@ -104,6 +114,20 @@ body {
 
 .footer {
     display: none;
+}
+
+/* button configuration */
+button {
+    background-color: #ccc;
+    color: #000;
+    border: 0.1px solid black;
+    border-radius: var(--radius);
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    z-index: 100000;
 }
 
 /* create a media query for mobile devices  */
